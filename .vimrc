@@ -30,7 +30,7 @@ filetype plugin indent on
 
 " Colors {{{
 syntax enable           " enable syntax processing
-colorscheme jellybeans     " uses badwolf color scheme
+colorscheme jellybeans     " uses jellybeans color scheme
 " }}}
 
 " Misc {{{
@@ -74,6 +74,7 @@ noremap k gk		" move horizontally by line, not wrap
 noremap B ^		" move to beginning of line
 nnoremap E $		" move to end of line
 nnoremap gV `[v`]	" highlight last inserted stuff
+inoremap jk <esc>
 
 " changes controls for split screens
 nnoremap <c-j> <c-w>j
@@ -85,17 +86,12 @@ nnoremap <c-h> <c-w>h
 
 " Leader Shortcuts {{{
 let mapleader=","
-nnoremap <leader>m :silent make\|redraw!\|cw<CR>
-nnoremap <leader>w :NERDTree<CR>
-nnoremap <leader>u :GundoToggle<CR>
-nnoremap <leader><space> :noh<CR>
-nnoremap <leader>s :mksession<CR>
-nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
-nnoremap <leader>d :Make! 
-inoremap jk <esc>
+nnoremap <leader>m :silent make \|redraw!\|cw<CR>
+nnoremap <leader>s :mksession!<CR>
+nnoremap <leader>C :SyntasticCheck<CR>:Errors<CR>
 " }}}
 
-" CtrlP {{{
+" CtrlP {{{  
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
@@ -120,10 +116,6 @@ let g:syntastic_style_error_symbol = '!'
 let g:syntastic_style_warning_symbol = '!'
 
 let g:syntastic_sh_checkers = ['shellcheck']
-" }}}
-
-" Surround {{{
-"
 " }}}
 
 " Backups {{{
