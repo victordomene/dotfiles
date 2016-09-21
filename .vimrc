@@ -39,11 +39,14 @@ set backspace=indent,eol,start
 " }}}
 
 " Spaces & Tabs {{{
-set tabstop=4           " 4 space tab
-set expandtab           " use spaces for tabs
-set softtabstop=4       " 4 space tab
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
 set modelines=1
 set autoindent
+highlight ColorColumn ctermbg=7
+set colorcolumn=80
 " }}}
 
 " UI Layout {{{
@@ -60,6 +63,10 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
 " }}}
 
+" CTags {{{
+set tags=./tags,tags;$HOME
+" }}}
+
 " Folding {{{
 set foldmethod=indent   " fold based on indent level
 set foldnestmax=10      " max 10 depth
@@ -69,12 +76,14 @@ set foldlevelstart=10    " start with fold level of 1
 "  }}}
 
 " Line Shortcuts {{{
-noremap j gj 		" move vertically by line, not wrap
-noremap k gk		" move horizontally by line, not wrap
-noremap B ^		" move to beginning of line
-nnoremap E $		" move to end of line
-nnoremap gV `[v`]	" highlight last inserted stuff
+nnoremap j gj
+nnoremap k gk
+nnoremap B ^
+nnoremap E $
+nnoremap gV `[v`]
 inoremap jk <esc>
+inoremap <Down> <C-o>g<Down>
+inoremap <Up> <C-o>g<Up>
 
 " changes controls for split screens
 nnoremap <c-j> <c-w>j
@@ -89,9 +98,10 @@ let mapleader=","
 nnoremap <leader>m :silent make \|redraw!\|cw<CR>
 nnoremap <leader>s :mksession!<CR>
 nnoremap <leader>C :SyntasticCheck<CR>:Errors<CR>
+nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " }}}
 
-" CtrlP {{{  
+" CtrlP {{{
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
@@ -116,13 +126,14 @@ let g:syntastic_style_error_symbol = '!'
 let g:syntastic_style_warning_symbol = '!'
 
 let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_tex_checkers = ['lacheck']
 " }}}
 
 " Backups {{{
-set backup 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
-set backupskip=/tmp/*,/private/tmp/* 
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 
