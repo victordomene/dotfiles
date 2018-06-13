@@ -1,0 +1,16 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = false
+indent_style = space
+indent_size = 2
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+# Matches any json or js files 
+[**.{json,js}]
+indent_size = 2

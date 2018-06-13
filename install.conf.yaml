@@ -1,0 +1,12 @@
+- defaults:
+    link:
+        relink: true
+        force: true
+
+- link:
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.editorconfig: editorconfig
+
+- shell:
+    - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim || echo "Vundle already installed; skipping."
