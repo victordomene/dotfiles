@@ -7,6 +7,9 @@
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
     ~/.editorconfig: editorconfig
+    ~/.vim/colors/jellybeans.vim:
+      create: true
+      path: colors/jellybeans.vim
 
 - shell:
     - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim || echo "Vundle already installed; skipping."

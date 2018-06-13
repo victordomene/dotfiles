@@ -20,6 +20,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/fzf'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 " }}}
@@ -91,7 +92,7 @@ nnoremap <c-h> <c-w>h
 " Leader Shortcuts {{{
 let mapleader=","
 nnoremap <leader>C :SyntasticCheck<CR>:Errors<CR>
-nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <leader>w :StripWhitespace<CR>
 " }}}
 
 " CtrlP {{{
@@ -131,6 +132,11 @@ nnoremap <leader>b: :Tabularize /:\zs<CR>
 vnoremap <leader>b: :Tabularize /:\zs<CR>
 nnoremap <leader>b<space> :Tabularize / <CR>
 vnoremap <leader>b<space> :Tabularize / <CR>
+" }}}
+
+" Whitespace {{{
+let g:strip_whitespace_on_save=1
+let g:strip_whitelines_at_eof=1
 " }}}
 
 " Backups {{{
