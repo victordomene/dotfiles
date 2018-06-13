@@ -32,7 +32,7 @@ filetype plugin indent on
 
 " Colors {{{
 syntax on                   " enable syntax processing
-colorscheme jellybeans 
+colorscheme jellybeans
 
 hi ColorColumn ctermbg=gray
 set colorcolumn=81
@@ -49,6 +49,7 @@ set wildmenu		        " autocomplete for command menu
 set showmatch           " higlight matching parenthesis
 set fillchars+=vert:\│  " no pipes on vert split
 hi clear VertSplit      " low contrast on split
+noremap <C-C> <esc>
 " }}}
 
 " Searching {{{
