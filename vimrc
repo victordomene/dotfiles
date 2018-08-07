@@ -5,6 +5,7 @@
  " Launch Config {{{
 set nocompatible              " be iMproved, required
 set autochdir                 " automatically changes directory according to file
+set clipboard=unnamed
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -14,6 +15,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Install Bundles {{{
+Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
@@ -32,6 +34,11 @@ filetype plugin indent on
 
 " Colors {{{
 syntax on                   " enable syntax processing
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
+let base16colorspace=256
+set termguicolors
 colorscheme jellybeans
 
 hi ColorColumn ctermbg=gray
@@ -94,6 +101,9 @@ nnoremap <c-h> <c-w>h
 let mapleader=","
 nnoremap <leader>C :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>w :StripWhitespace<CR>
+nnoremap <leader>y "*y
+nnoremap <leader>p "*p
+
 " }}}
 
 " CtrlP {{{
@@ -128,11 +138,9 @@ let g:syntastic_tex_checkers = ['lacheck']
 
 " Tabularize {{{
 nnoremap <leader>b= :Tabularize /=<CR>
-vnoremap <leader>b= :Tabularize /=<CR>
-nnoremap <leader>b: :Tabularize /:\zs<CR>
+nnoremap <leader>b; :Tabularize /\<CR>
 vnoremap <leader>b: :Tabularize /:\zs<CR>
 nnoremap <leader>b<space> :Tabularize / <CR>
-vnoremap <leader>b<space> :Tabularize / <CR>
 " }}}
 
 " Whitespace {{{
