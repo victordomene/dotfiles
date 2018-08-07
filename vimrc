@@ -39,9 +39,8 @@ if $TERM == "xterm-256color"
 endif
 let base16colorspace=256
 set termguicolors
-colorscheme jellybeans
+colorscheme base16-monokai
 
-hi ColorColumn ctermbg=gray
 set colorcolumn=81
 set cursorline
 " }}}
