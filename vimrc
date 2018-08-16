@@ -25,6 +25,7 @@ Plugin 'junegunn/fzf'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'rhysd/vim-clang-format'
 " }}}
 
 call vundle#end()
@@ -99,6 +100,7 @@ nnoremap <c-h> <c-w>h
 " Leader Shortcuts {{{
 let mapleader=","
 nnoremap <leader>C :SyntasticCheck<CR>:Errors<CR>
+nnoremap <leader>k :ClangFormat<CR>
 nnoremap <leader>w :StripWhitespace<CR>
 nnoremap <leader>y "*y
 nnoremap <leader>p "*p
