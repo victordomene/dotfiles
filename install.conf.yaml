@@ -7,6 +7,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
     ~/.editorconfig: editorconfig
+    ~/.clang-format: clang-format
     ~/.vim/colors/jellybeans.vim:
       create: true
       path: colors/jellybeans.vim
